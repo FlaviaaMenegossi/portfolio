@@ -1,46 +1,91 @@
-# Getting Started with Create React App
+# Portfólio — Flavia Menegossi
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Portfólio pessoal desenvolvido em React com TypeScript, com sistema de temas (claro e escuro), layout responsivo e integração com as estatísticas do GitHub. O projeto foi construído seguindo a metodologia **Atomic Design** para organização dos componentes.
 
-## Available Scripts
+## Demonstração
 
-In the project directory, you can run:
+O portfólio apresenta uma barra lateral com foto, nome e profissão, uma seção "Sobre mim" com estatísticas do GitHub, e uma galeria de projetos. Um botão permite alternar entre o tema claro e o escuro.
 
-### `npm start`
+## Tecnologias utilizadas
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+- **React** — biblioteca para construção da interface
+- **TypeScript** — tipagem estática sobre o JavaScript
+- **styled-components** — estilização com CSS-in-JS
+- **Create React App (react-scripts)** — ambiente de desenvolvimento e build
+- **ESLint** — análise de qualidade do código
+- **Prettier** — formatação automática do código
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## Conceitos aplicados
 
-### `npm test`
+- Componentização seguindo o **Atomic Design** (átomos, moléculas e organismos)
+- Tipagem de props com TypeScript (props opcionais e tipos literais)
+- Estilização condicional com props no styled-components
+- Transient props (prefixo `$`) para evitar props inválidas no HTML
+- Herança de estilos entre componentes
+- Estilos globais com `createGlobalStyle`
+- Sistema de temas com `ThemeProvider` e o Hook `useState`
+- Layout responsivo com media queries
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Estrutura do projeto
 
-### `npm run build`
+```
+src/
+├── components/        # Componentes reutilizáveis (átomos)
+│   ├── Avatar/
+│   ├── Paragrafo/
+│   ├── Projeto/
+│   └── Titulo/
+├── containers/        # Seções da página (organismos)
+│   ├── Projetos/
+│   ├── Sidebar/
+│   └── Sobre/
+├── themes/            # Temas de cores (claro e escuro)
+│   ├── light.ts
+│   └── dark.ts
+├── App.tsx            # Componente raiz
+├── index.tsx          # Ponto de entrada da aplicação
+└── styles.ts          # Estilos globais e container principal
+```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Cada componente é organizado em dois arquivos: `index.tsx` (estrutura e lógica) e `styles.ts` (estilos).
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Como rodar o projeto
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Antes de começar, é necessário ter o **Node.js** e o **Git** instalados.
 
-### `npm run eject`
+Clone o repositório:
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+```bash
+git clone https://github.com/FlaviaaMenegossi/portfolio.git
+```
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Entre na pasta do projeto:
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+```bash
+cd portfolio
+```
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+Instale as dependências:
 
-## Learn More
+```bash
+npm install
+```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Inicie o servidor de desenvolvimento:
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+```bash
+npm start
+```
+
+O projeto ficará disponível em `http://localhost:3000`.
+
+## Scripts disponíveis
+
+- `npm start` — inicia o servidor de desenvolvimento
+- `npm run build` — gera a versão de produção
+- `npm test` — executa os testes
+
+## Autora
+
+**Flavia Menegossi**
+GitHub: [@FlaviaaMenegossi](https://github.com/FlaviaaMenegossi)
